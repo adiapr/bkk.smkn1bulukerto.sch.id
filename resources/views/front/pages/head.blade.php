@@ -1,47 +1,22 @@
-<!-- meta data -->
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Burger King - Food Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
 
-<!--font-family-->
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+        <!-- Favicon -->
+        <link href="FrontAsset/img/favicon.ico" rel="icon">
 
-<!-- title of site -->
-<title>BKK Skanser | @yield('title')</title>
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet">
 
-<!-- For favicon png -->
-<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="FrontAssets/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="FrontAssets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="FrontAssets/lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="FrontAssets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
-<!--font-awesome.min.css-->
-<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-<!--linear icon css-->
-<link rel="stylesheet" href="assets/css/linearicons.css">
-
-<!--animate.css-->
-<link rel="stylesheet" href="assets/css/animate.css">
-
-<!--owl.carousel.css-->
-<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-
-<!--bootstrap.min.css-->
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-<!-- bootsnav -->
-<link rel="stylesheet" href="assets/css/bootsnav.css" >
-
-<!--style.css-->
-<link rel="stylesheet" href="assets/css/style.css">
-
-<!--responsive.css-->
-<link rel="stylesheet" href="assets/css/responsive.css">
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+        <!-- Template Stylesheet -->
+        <link href="FrontAssets/css/style.css" rel="stylesheet">

@@ -1,34 +1,25 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
     <head>
         @include('front.pages.head')
     </head>
 
-	<body>
+    <body>
+        <!-- Nav Bar Start -->
+            @include('front.pages.header')
+        <!-- Nav Bar End -->
 
-		<!--welcome-hero start -->
-		<header id="home" class="welcome-hero">
 
-            @include('front.pages.slider')
-			<!-- top-area Start -->
-			<div class="top-area">
-                @include('front.pages.header')
-			</div><!-- /.top-area-->
-			<!-- top-area End -->
-
-		</header><!--/.welcome-hero-->
-		<!--welcome-hero end -->
-
-        {{-- content  --}}
             @yield('content')
-        {{-- /content  --}}
 
-        {{-- footer  --}}
-        @include('front.pages.footer')
 
+        <!-- Footer Start -->
+            @include('front.pages.footer')
+        <!-- Footer End -->
+
+
+
+        <!-- JavaScript Libraries -->
         @include('front.pages.js')
-
     </body>
-
 </html>

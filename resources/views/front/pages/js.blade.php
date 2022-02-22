@@ -1,22 +1,14 @@
-<!-- Include all js compiled plugins (below), or include individual files as needed -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="FrontAssets/lib/easing/easing.min.js"></script>
+        <script src="FrontAssets/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="FrontAssets/lib/tempusdominus/js/moment.min.js"></script>
+        <script src="FrontAssets/lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="FrontAssets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-<script src="assets/js/jquery.js"></script>
+        <!-- Contact Javascript File -->
+        <script src="FrontAssets/mail/jqBootstrapValidation.min.js"></script>
+        <script src="FrontAssets/mail/contact.js"></script>
 
-<!--modernizr.min.js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-
-<!--bootstrap.min.js-->
-<script src="assets/js/bootstrap.min.js"></script>
-
-<!-- bootsnav js -->
-<script src="assets/js/bootsnav.js"></script>
-
-<!--owl.carousel.js-->
-<script src="assets/js/owl.carousel.min.js"></script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-
-<!--Custom JS-->
-<script src="assets/js/custom.js"></script>
+        <!-- Template Javascript -->
+        <script src="FrontAssets/js/main.js"></script>
