@@ -20,7 +20,7 @@
                         <a href="single.html" class="dropdown-item">Blog Detail</a>
                     </div>
                 </div> --}}
-                <a href="contact.html" class="nav-item nav-link"><button class="btn btn-warning btn-sm">Masuk</button></a>
+                <a href="/admin" class="nav-item nav-link"><button class="btn btn-warning btn-sm">Masuk</button></a>
             </div>
         </div>
     </div>

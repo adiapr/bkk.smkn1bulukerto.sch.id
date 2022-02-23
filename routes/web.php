@@ -22,3 +22,4 @@ Route::get('/admin', function () {
 Route::get('/',             [FrontController::class, 'index']);
 
 Route::get('/data-lowongankerja',       [LowonganKerja::class, 'index_datalowongan']);
+Route::post('/tambahlowongan',          [LowonganKerja::class, 'addLowongan']);

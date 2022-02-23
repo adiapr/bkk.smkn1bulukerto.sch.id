@@ -205,34 +205,35 @@
 
             <hr>
 
-            <!-- Menu Start -->
+            <!-- Lowongan Start -->
             <div class="menu">
                 <div class="container">
                     <div class="section-header">
                         <h2>Lowongan Terbaru</h2>
                     </div>
                     <div class="row">
+                        @foreach ($datapekerjaan as $item)
                         <div class="col-md-12 mt-2">
                             <div class="card mb-3">
                                 <div class="row g-0">
-                                    <div class="col-md-3 border-end">
-                                        <img src="https://rajasanews.com/wp-content/uploads/2016/07/Info-Loker-PT-Astra-Daihatsu-Motor.jpg" class="img-fluid rounded-start" alt="...">
+                                    <div class="col-md-3 border-end align-self-center">
+                                        <img src="img/company/{{ $item->logo }}" class="img-fluid rounded-start" alt="...">
                                     </div>
                                     <div class="col-md-7">
                                         <div class="card-body">
-                                        <h5>Operator Produksi</h5>
-                                        <h2 class="card-title">Astra Dhaihatsu Motor</h2>
+                                        <h5>{{ $item->posisi }}</h5>
+                                        <h2 class="card-title">{{ $item->perusahaan }}</h2>
                                         <hr>
-                                        <table>
-                                                <tr>
+                                        <table style="width:100%">
+                                                <tr style="width:200%">
                                                     <td  width="30%">
-                                                        <small class="text-muted"><i class="fa fa-map-marker"></i> Jakarta</small>
+                                                        <small class="text-muted"><i class="fa fa-map-marker"></i> {{ $item->lokasi }}</small>
                                                     </td>
                                                     <td width="40%">
-                                                        <small class="text-muted"><i class="fa fa-graduation-cap"></i> RPL, AKuntansi</small>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small class="text-muted"><i class="fa fa-graduation-cap"></i> {{ $item->lulusan }}</small>
                                                     </td>
                                                     <td width="30%">
-                                                        <small class="text-muted"><i class="fa fa-graduation-cap"></i> RPL, AKuntansi</small>
+                                                        <small class="text-muted"><i class="fa fa-calendar"></i> {{ $item->batas }}</small>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -246,10 +247,44 @@
                                                 <div class="modal-dialog modal-lg">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <h5 class="modal-title" id="exampleModalLabel">{{ $item->perusahaan }}</h5>
                                                         </div>
                                                         <div class="modal-body text-left">
-                                                            ssdsdsdsdd
+                                                            <h6 class="pull-left"><b>{{ $item->posisi }}</b></h6>
+                                                            <img class="pull-right" src="img/company/{{ $item->logo }}" height="30" alt="">
+                                                            <p style="font-size: -3">
+                                                                {!! $item->deskripsi !!}
+                                                            </p>
+                                                            <hr>
+                                                            <h5>Isi data dibawah untuk pendaftaran</h5>
+                                                            <div class="form-group">
+                                                                <label for="">Nama Lengkap</label>
+                                                                <input type="text" name="nama" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="">Tanggal Lahir</label>
+                                                                <input type="date" name="tanggal" required class="form-control form-control-sm">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="">Alamat</label>
+                                                                <input type="text" name="alamat" required placeholder="Masukkan alamat legkap" class="form-control form-control-sm">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="">Asal Sekolah</label>
+                                                                <input type="text" name="asal" required placeholder="Masukkan asal sekolah" class="form-control form-control-sm">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="">Jurusan</label>
+                                                                <input type="text" name="jurusan" required placeholder="TKR, RPL, AK" class="form-control form-control-sm">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="">Tahun lulus</label>
+                                                                <input type="number" name="tahun" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="">No telp/Whatsapp</label>
+                                                                <input type="number" name="telp" required placeholder="Awali dengan 62" class="form-control form-control-sm">
+                                                            </div>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Kembali</button>
@@ -263,35 +298,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 mt-2">
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                  <div class="col-md-3 border-end">
-                                    <img src="https://rajasanews.com/wp-content/uploads/2016/07/Info-Loker-PT-Astra-Daihatsu-Motor.jpg" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-7">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Astra Dhaihatsu Motor</h5>
-                                      This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                      <hr>
-                                      <table>
-                                            <tr>
-                                                <td  width="50%">
-                                                    <small class="text-muted"><i class="fa fa-map-marker"></i> Jakarta</small>
-                                                </td>
-                                                <td width="50%">
-                                                    <small class="text-muted"><i class="fa fa-graduation-cap"></i> RPL, AKuntansi</small>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-2 text-right align-self-center">
-                                      <button class="btn btn-primary mb-2 mr-3"> <i class="fa fa-bookmark"></i> Daftar</button>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
