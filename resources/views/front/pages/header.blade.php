@@ -8,9 +8,9 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="feature.html" class="nav-item nav-link">Feature</a>
-                <a href="team.html" class="nav-item nav-link">Chef</a>
+                <a href="about.html" class="nav-item nav-link">Lowongan</a>
+                <a href="feature.html" class="nav-item nav-link">Tentang</a>
+                {{-- <a href="team.html" class="nav-item nav-link">Chef</a>
                 <a href="menu.html" class="nav-item nav-link">Menu</a>
                 <a href="booking.html" class="nav-item nav-link">Booking</a>
                 <div class="nav-item dropdown">
@@ -19,8 +19,8 @@
                         <a href="blog.html" class="dropdown-item">Blog Grid</a>
                         <a href="single.html" class="dropdown-item">Blog Detail</a>
                     </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div> --}}
+                <a href="contact.html" class="nav-item nav-link"><button class="btn btn-warning btn-sm">Masuk</button></a>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\LowonganKerja;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,10 @@ use App\Http\Controllers\FrontController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/admin', function () {
+    return view('administrator.index');
+});
 
 Route::get('/',             [FrontController::class, 'index']);
+
+Route::get('/data-lowongankerja',       [LowonganKerja::class, 'index_datalowongan']);

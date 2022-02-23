@@ -1,5 +1,9 @@
 @extends('front.pages.main')
 
+@section('title')
+    Beranda
+@endsection
+
 @section('content')
             <!-- Carousel Start -->
             <div class="carousel">
@@ -216,15 +220,18 @@
                                     </div>
                                     <div class="col-md-7">
                                         <div class="card-body">
-                                        <h5 class="card-title">Astra Dhaihatsu Motor</h5>
-                                        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                        <h5>Operator Produksi</h5>
+                                        <h2 class="card-title">Astra Dhaihatsu Motor</h2>
                                         <hr>
                                         <table>
                                                 <tr>
-                                                    <td  width="50%">
+                                                    <td  width="30%">
                                                         <small class="text-muted"><i class="fa fa-map-marker"></i> Jakarta</small>
                                                     </td>
-                                                    <td width="50%">
+                                                    <td width="40%">
+                                                        <small class="text-muted"><i class="fa fa-graduation-cap"></i> RPL, AKuntansi</small>
+                                                    </td>
+                                                    <td width="30%">
                                                         <small class="text-muted"><i class="fa fa-graduation-cap"></i> RPL, AKuntansi</small>
                                                     </td>
                                                 </tr>
