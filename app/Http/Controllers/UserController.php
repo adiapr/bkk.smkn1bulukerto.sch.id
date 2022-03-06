@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -25,8 +26,12 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->level    = 'User';
-
         $user->save();
+
+        $siswa = new Siswa;
+        $siswa->user_id = $user->id;
+        $siswa->save();
+
         toast('Data berhasil ditambahkan','success');
         return redirect('/administrator/user');
     }
@@ -54,5 +59,12 @@ class UserController extends Controller
 
         toast('Data telah dihapus','warning');
         return redirect('/administrator/user');
+    }
+
+    public function indexSiswa(){
+        $user = User::with('siswa')->get();
+        // $siswa = Siswa::orderBy('id', 'desc')->get();
+        $no = 1;
+        return view('administrator.siswa', compact('user','no'));
     }
 }

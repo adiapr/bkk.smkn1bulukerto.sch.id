@@ -33,3 +33,5 @@ Route::get('/administrator/user',       [UserController::class,     'index']);
 Route::post('/tambahuser',              [UserController::class,     'addUser']);
 Route::post('/edituser/{id}',           [UserController::class,     'editUser']);
 Route::post('/hapususer/{id}',          [UserController::class,     'hapusUser']);
+
+Route::get('/siswa',            [UserController::class, 'indexSiswa']);
