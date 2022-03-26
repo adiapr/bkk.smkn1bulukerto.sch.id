@@ -11,16 +11,34 @@
                 <a href="about.html" class="nav-item nav-link">Lowongan</a>
                 <a href="feature.html" class="nav-item nav-link">Tentang</a>
                 {{-- <a href="team.html" class="nav-item nav-link">Chef</a>
-                <a href="menu.html" class="nav-item nav-link">Menu</a>
-                <a href="booking.html" class="nav-item nav-link">Booking</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu">
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="single.html" class="dropdown-item">Blog Detail</a>
+                <a href="menu.html" class="nav-item nav-link">Menu</a> --}}
+                {{-- <a href="booking.html" class="nav-item nav-link">Booking</a> --}}
+                @guest
+                    @if (Route::has('login'))
+                        <a href="/admin" class="nav-item nav-link"><button class="btn btn-warning btn-sm">Masuk</button></a>
+                    @endif
+
+                @else
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ Auth::user()->name }}</a></a>
+                        <div class="dropdown-menu">
+                            <a href="/admin" class="dropdown-item">Dashboard</a>
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"
+                                class="dropdown-item">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
                     </div>
-                </div> --}}
-                <a href="/admin" class="nav-item nav-link"><button class="btn btn-warning btn-sm">Masuk</button></a>
+                @endguest
+
+                {{-- <a href="/admin" class="nav-item nav-link"> --}}
+
+
             </div>
         </div>
     </div>

@@ -5,7 +5,7 @@
         <meta content="Free Website Template" name="description">
 
         <!-- Favicon -->
-        <link href="FrontAsset/img/favicon.ico" rel="icon">
+        <link href="{{ asset('FrontAsset/img/favicon.ico') }}" rel="icon">
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet">
@@ -13,10 +13,10 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="FrontAssets/lib/animate/animate.min.css" rel="stylesheet">
-        <link href="FrontAssets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="FrontAssets/lib/flaticon/font/flaticon.css" rel="stylesheet">
-        <link href="FrontAssets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+        <link href="{{ asset('FrontAssets/lib/animate/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('FrontAssets/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('FrontAssets/lib/flaticon/font/flaticon.css') }}" rel="stylesheet">
+        <link href="{{ asset('FrontAssets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
 
         <!-- Template Stylesheet -->
-        <link href="FrontAssets/css/style.css" rel="stylesheet">
+        <link href="{{ asset('FrontAssets/css/style.css') }}" rel="stylesheet">

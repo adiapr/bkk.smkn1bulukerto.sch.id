@@ -1,11 +1,11 @@
 @extends('administrator.pages.layouts')
 
 @section('title')
-    User
+    Siswa
 @endsection
 
 @section('sidebar')
-	Data User
+	Data Siswa
 @endsection
 
 @section('content')
@@ -19,13 +19,13 @@
 		<div class="card">
 			<div class="card-header">
                 <h4 class="card-title pull-left">List Data</h4>
-                <button type="button" class="btn btn-success btn-sm pull-right " data-toggle="modal" data-target="#exampleModal">
+                {{-- <button type="button" class="btn btn-success btn-sm pull-right " data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-file-excel"></i> Import Excel
                 </button> &nbsp;
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-sm pull-right mr-2" data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-plus-circle"></i> Tambah Data
-                </button>&nbsp;
+                </button>&nbsp; --}}
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

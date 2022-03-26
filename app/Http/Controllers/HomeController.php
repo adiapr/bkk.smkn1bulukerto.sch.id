@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\PekerjaanModel;
 
 use Illuminate\Http\Request;
 
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $datapekerjaan = PekerjaanModel::orderBy('id','desc')->get();
+
+        return view('front.index',compact('datapekerjaan'));
     }
 }

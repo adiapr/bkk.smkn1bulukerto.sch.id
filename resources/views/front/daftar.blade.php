@@ -1,7 +1,7 @@
 @extends('front.pages.main')
 
 @section('title')
-    Beranda
+    Daftar
 @endsection
 
 @section('content')
@@ -14,17 +14,14 @@
                                 <img src="https://smkn1bulukerto.sch.id/wp-content/uploads/2021/04/BUMEN.jpg" alt="Image">
                             </div>
                             <div class="carousel-text">
-                                <h1>Smart <span>with</span>Technology</h1>
+                                <h1><span>{{ $lowongan->perusahaan }}</span></h1>
                                 <p>
-                                    Peserta didik harus sehat dan melek teknologi
+                                    {{ $lowongan->posisi }}<br>
+                                    {{ $lowongan->lokasi }}
                                 </p>
-                                <div class="carousel-btn">
-                                    <a class="btn custom-btn" href="">View Menu</a>
-                                    <a class="btn custom-btn" href="">Book Table</a>
-                                </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        {{-- <div class="carousel-item">
                             <div class="carousel-img">
                                 <img src="https://smkn1bulukerto.sch.id/wp-content/uploads/2021/04/19.jpg" alt="Image">
                             </div>
@@ -53,7 +50,7 @@
                                     <a class="btn custom-btn" href="">Book Table</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -67,18 +64,53 @@
                         <div class="col-lg-7">
                             <div class="booking-content">
                                 <div class="section-header">
-                                    <p>Selamat Datang</p>
-                                    <h2>BKK SMKN 1 Bulukerto</h2>
+                                    <p>{{ $lowongan->posisi }}</p>
+                                    <h3>{{ $lowongan->perusahaan }}</h3>
                                 </div>
                                 <div class="about-text">
-                                    <p>
-                                        Galau cari kerja? Ingin lebih kompeten? Mau mengembangkan diri tanpa pusing memikirkan biaya? Yuk gabung bersama <b>BKK Cutra Mandiri SMKN 1 Bulukerto</b> dan #SiapDariSekarang
-                                    </p>
+                                    <form action="/apply" method="post">
+                                        @csrf
+                                        <hr>
+                                        <h5>Isi data dibawah untuk pendaftaran</h5>
+                                        <div class="form-group">
+                                            <label for="">Nama Lengkap</label>
+                                            <input type="hidden" value="{{ $lowongan->id }}" name="lowongan_id" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
+                                            <input type="hidden" value="{{ $user->id }}" name="user_id" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
+                                            <input type="text" value="{{ $user->name }}" name="nama" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Tanggal Lahir</label>
+                                            <input type="text" name="tgl_lahir" value="{{ $user->siswa->tgl_lahir }}" required class="form-control form-control-sm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Alamat</label>
+                                            <input type="text" name="alamat" value="{{ $user->siswa->alamat }}" required placeholder="Masukkan alamat legkap" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Asal Sekolah</label>
+                                            <input type="text" name="asal" required placeholder="Masukkan asal sekolah" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Jurusan</label>
+                                            <input type="text" name="jurusan" value="{{ $user->siswa->kelas }}" required placeholder="TKR, RPL, AK" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Tahun lulus</label>
+                                            <input type="number" name="tahun" value="{{ $user->siswa->lulusan }}" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">No telp/Whatsapp</label>
+                                            <input type="number" name="telp" required placeholder="Awali dengan 62" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-primary btn-sm pull-right"><i class="fa fa-paper-plane"></i> Kirim Lamaran</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-5 mt-3">
-                            <img src="https://bkk.smkn5-sby.sch.id/ui-2/img/sticky-amikom.png"  style="width:100%" alt="">
+                        <div class="col-lg-5 mt-3 justify-content-end">
+                            <img src="https://bkk.smkn5-sby.sch.id/ui-2/img/step1-min.png" class="align-bottom"  style="width:100%" alt="">
                         </div>
                     </div>
                 </div>
@@ -206,74 +238,7 @@
             <hr>
 
             <!-- Lowongan Start -->
-            <div class="menu">
-                <div class="container">
-                    <div class="section-header">
-                        <h2>Lowongan Terbaru</h2>
-                    </div>
-                    <div class="row">
-                        @foreach ($datapekerjaan as $item)
-                        <div class="col-md-12 mt-2">
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-3 border-end align-self-center">
-                                        <img src="img/company/{{ $item->logo }}" class="img-fluid rounded-start" alt="...">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="card-body">
-                                        <h5>{{ $item->posisi }}</h5>
-                                        <h2 class="card-title">{{ $item->perusahaan }}</h2>
-                                        <hr>
-                                        <table style="width:100%">
-                                                <tr style="width:200%">
-                                                    <td  width="30%">
-                                                        <small class="text-muted"><i class="fa fa-map-marker"></i> {{ $item->lokasi }}</small>
-                                                    </td>
-                                                    <td width="40%">
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small class="text-muted"><i class="fa fa-graduation-cap"></i> {{ $item->lulusan }}</small>
-                                                    </td>
-                                                    <td width="30%">
-                                                        <small class="text-muted"><i class="fa fa-calendar"></i> {{ $item->batas }}</small>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 text-right align-self-center">
-                                        <button class="btn btn-primary mb-2 mr-3 btn-sm" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-list"></i> Rincian</button>
-                                        <!-- Modal -->
-                                        <form action="" method="post">
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">{{ $item->perusahaan }}</h5>
-                                                        </div>
-                                                        <div class="modal-body text-left">
-                                                            <h6 class="pull-left"><b>{{ $item->posisi }}</b></h6>
-                                                            <img class="pull-right" src="img/company/{{ $item->logo }}" height="30" alt="">
-                                                            <p style="font-size: -3">
-                                                                {!! $item->deskripsi !!}
-                                                            </p>
 
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            {{-- <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Kembali</button> --}}
-                                                            <a href="daftar/jobs{{ $item->id }}" class="btn btn-primary btn-sm"> <i class="fa fa-paper-plane"></i> Daftar</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-
-                    </div>
-                </div>
-            </div>
             <!-- Menu End -->
 
 

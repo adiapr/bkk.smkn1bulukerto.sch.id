@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\PekerjaanModel;
 use File;
+use Illuminate\Support\Facades\Auth;
 
 class LowonganKerja extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index_datalowongan(){
         $no = 1;
         $datalowongan = PekerjaanModel::orderBy('id','desc')
@@ -41,5 +49,13 @@ class LowonganKerja extends Controller
         toast('Data berhasil ditambahkan', 'success');
         return redirect('/data-lowongankerja');
 
+    }
+
+    public function daftar($id){
+        $lowongan = PekerjaanModel::find($id)->first();
+        $id_user = Auth::user()->id;
+        $user = User::where('id', $id_user)->first();
+
+        return view('front.daftar', compact('lowongan','user'));
     }
 }
