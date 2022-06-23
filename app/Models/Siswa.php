@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\User;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +12,7 @@ class Siswa extends Model
 
     protected $table = "table_siswa";
 
-    public function user(){
+    public function users(){
         return $this->belongsTo(User::class, 'user_id');
     }
 }

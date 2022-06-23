@@ -43,6 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $table = "users";
+
     public function siswa(){
         return $this->hasOne(Siswa::class);
     }

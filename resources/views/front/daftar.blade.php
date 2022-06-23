@@ -92,7 +92,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">Jurusan</label>
-                                            <input type="text" name="jurusan" value="{{ $user->siswa->kelas }}" required placeholder="TKR, RPL, AK" class="form-control form-control-sm">
+                                            <input type="text" name="jurusan" value="{{ 
+                                            siswa->kelas }}" required placeholder="TKR, RPL, AK" class="form-control form-control-sm">
                                         </div>
                                         <div class="form-group">
                                             <label for="">Tahun lulus</label>

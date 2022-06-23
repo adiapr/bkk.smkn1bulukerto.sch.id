@@ -7,7 +7,7 @@
 @section('content')
             <!-- Carousel Start -->
             <div class="carousel">
-                <div class="container-fluid">
+                <div class="fluid">
                     <div class="owl-carousel">
                         <div class="carousel-item">
                             <div class="carousel-img">
@@ -217,7 +217,7 @@
                             <div class="card mb-3">
                                 <div class="row g-0">
                                     <div class="col-md-3 border-end align-self-center">
-                                        <img src="img/company/{{ $item->logo }}" class="img-fluid rounded-start" alt="...">
+                                        <img src="img/company/{{ $item->logo }}" class="rounded mx-auto d-block" style="height:150px" alt="...">
                                     </div>
                                     <div class="col-md-7">
                                         <div class="card-body">
@@ -251,7 +251,7 @@
                                                         </div>
                                                         <div class="modal-body text-left">
                                                             <h6 class="pull-left"><b>{{ $item->posisi }}</b></h6>
-                                                            <img class="pull-right" src="img/company/{{ $item->logo }}" height="30" alt="">
+                                                            <img src="img/company/{{ $item->logo }}" height="100" alt="">
                                                             <p style="font-size: -3">
                                                                 {!! $item->deskripsi !!}
                                                             </p>
@@ -259,7 +259,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             {{-- <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Kembali</button> --}}
-                                                            <a href="daftar/jobs{{ $item->id }}" class="btn btn-primary btn-sm"> <i class="fa fa-paper-plane"></i> Daftar</a>
+                                                            <a href="daftar/jobs/{{ $item->id }}" class="btn btn-primary btn-sm"> <i class="fa fa-paper-plane"></i> Daftar</a>
                                                         </div>
                                                     </div>
                                                 </div>

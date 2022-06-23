@@ -26,7 +26,7 @@ Route::get('/',             [FrontController::class, 'index']);
 Auth::routes();
 Route::get('/data-lowongankerja',       [LowonganKerja::class, 'index_datalowongan']);
 Route::post('/tambahlowongan',          [LowonganKerja::class, 'addLowongan']);
-Route::get('/daftar/jobs{id}',                   [LowonganKerja::class, 'daftar']);
+Route::get('/daftar/jobs/{id}',         [LowonganKerja::class, 'daftar']);
 
 
 
