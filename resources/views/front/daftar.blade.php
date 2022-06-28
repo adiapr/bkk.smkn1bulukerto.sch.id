@@ -5,9 +5,10 @@
 @endsection
 
 @section('content')
+@include('sweetalert::alert')
             <!-- Carousel Start -->
-            <div class="carousel">
-                <div class="container-fluid">
+            <div class="carousel"   style="height:100px">
+                <div class="fluid">
                     <div class="owl-carousel">
                         <div class="carousel-item">
                             <div class="carousel-img">
@@ -76,11 +77,14 @@
                                             <label for="">Nama Lengkap</label>
                                             <input type="hidden" value="{{ $lowongan->id }}" name="lowongan_id" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
                                             <input type="hidden" value="{{ $user->id }}" name="user_id" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
+                                            <input type="hidden" value="{{ $user->siswa->id }}" name="siswa_id" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
                                             <input type="text" value="{{ $user->name }}" name="nama" required placeholder="Masukkan nama legkap" class="form-control form-control-sm">
                                         </div>
                                         <div class="form-group">
                                             <label for="">Tanggal Lahir</label>
-                                            <input type="text" name="tgl_lahir" value="{{ $user->siswa->tgl_lahir }}" required class="form-control form-control-sm">
+                                            <input type="date" name="tgl_lahir" value="{{ $user->siswa->tgl_lahir }}" required placeholder="Masukkan alamat legkap" class="form-control form-control-sm">
+                                           
+                                            
                                         </div>
                                         <div class="form-group">
                                             <label for="">Alamat</label>
@@ -88,12 +92,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">Asal Sekolah</label>
-                                            <input type="text" name="asal" required placeholder="Masukkan asal sekolah" class="form-control form-control-sm">
+                                            <input type="text" name="asal" required placeholder="Masukkan asal sekolah" value="{{ $user->siswa->sekolah }}" class="form-control form-control-sm">
                                         </div>
                                         <div class="form-group">
                                             <label for="">Jurusan</label>
-                                            <input type="text" name="jurusan" value="{{ 
-                                            siswa->kelas }}" required placeholder="TKR, RPL, AK" class="form-control form-control-sm">
+                                            <input type="text" name="jurusan" value="{{ $user->siswa->jurusan }}" required placeholder="TKR, RPL, AK" class="form-control form-control-sm">
                                         </div>
                                         <div class="form-group">
                                             <label for="">Tahun lulus</label>
@@ -101,7 +104,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">No telp/Whatsapp</label>
-                                            <input type="number" name="telp" required placeholder="Awali dengan 62" class="form-control form-control-sm">
+                                            <input type="number" name="telp" required placeholder="Awali dengan 62" value="{{ $user->siswa->no_telp }}" class="form-control form-control-sm">
                                         </div>
                                         <div class="form-group">
                                             <button class="btn btn-primary btn-sm pull-right"><i class="fa fa-paper-plane"></i> Kirim Lamaran</button>

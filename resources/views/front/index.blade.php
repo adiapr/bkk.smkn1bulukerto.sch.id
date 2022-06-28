@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+@include('sweetalert::alert')
+
             <!-- Carousel Start -->
             <div class="carousel">
                 <div class="fluid">

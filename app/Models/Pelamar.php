@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\PekerjaanModel;
+use App\Models\Siswa;
 
 class Pelamar extends Model
 {
@@ -15,5 +16,9 @@ class Pelamar extends Model
     public function pekerjaan(){
         return $this->belongsTo(PekerjaanModel::class);
     }
+
+    // public function siswa(){
+    //     return $this->belongsTo(Siswa::class);
+    // }
 }
 

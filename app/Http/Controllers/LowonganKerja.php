@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Siswa;
+use App\Models\Pelamar;
 use App\Models\PekerjaanModel;
 use File;
 use Illuminate\Support\Facades\Auth;
@@ -52,10 +54,19 @@ class LowonganKerja extends Controller
     }
 
     public function daftar($id){
-        $lowongan = PekerjaanModel::find($id)->first();
+        
+        $lowongan = PekerjaanModel::where('id', $id)->first();
         $id_user = Auth::user()->id;
-        $user = User::where('id', $id_user)->first();
-
-        return view('front.daftar', compact('lowongan','user'));
+        $pelamar = Pelamar::where('user_id', $id_user)->first();
+        // dd($lowongan->id);
+        
+        if(($pelamar->user_id == $id_user) && ($pelamar->pekerjaan_id == $id )){
+            alert()->info('Lamaran Terkrim','Silahkan menunggu untuk informasi selanjutnya'); 
+            return back();
+        }else{
+            $user = User::where('id', $id_user)->first();
+            // dd($user->name);
+            return view('front.daftar', compact('lowongan','user'));
+        }
     }
 }
